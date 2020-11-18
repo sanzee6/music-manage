@@ -16,5 +16,22 @@ export const updateSinger = (params) => post(`singer/update`, params)
 export const delSinger = (params) => post(`singer/delete`, params)
 
 // ------------------------------------歌曲相关---------------------------------------
+// 根据歌手id查询歌曲
+export const songOfSingerId = (params) => post(`song/singer/detail`, params)
 
-export const songOfSingerId = (params) => post(`song//singer/detail`, params)
+// 编辑歌曲
+export const updateSong = (params) => post(`song/update`, params)
+// 删除歌曲
+export const delSong = (params) => post(`song/delete`, params)
+
+// ------------------------------------歌单相关---------------------------------------
+// 查询歌单
+export const getAllSongList = (params) => post(`songList/allSongList`, params)
+// 添加歌单
+export const setSongList = (params) => post(`songList/add`, params)
+
+// 编辑歌单
+export const updateSongList = (params) => post(`songList/update`, params)
+
+// 删除歌单
+export const delSongList = (params) => post(`songList/delete`, params)

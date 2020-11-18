@@ -1,7 +1,7 @@
 <template>
   <div class="table">
     <div class="crumbs" style="text-align: center;">
-      <i class="el-icon-tickets"></i>歌曲信息
+      <i class="el-icon-tickets"></i>歌单歌曲信息
     </div>
     <div class="container">
       <div class="handle-box">
@@ -34,7 +34,7 @@
             </div>
           </div>
           <!--<el-upload :action="uploadUrl(scope.row.id)" :before-upload="beforeAvatorUpload" :on-success="handleAvatorSuccess">-->
-            <!--<el-button size="mini">更新图片</el-button>-->
+          <!--<el-button size="mini">更新图片</el-button>-->
           <!--</el-upload>-->
         </template>
       </el-table-column>
@@ -56,13 +56,13 @@
 
       <el-table-column label="资源更新"  align="center">
         <template slot-scope="scope">
-        <el-upload :action="uploadUrl(scope.row.id)" :before-upload="beforeAvatorUpload" :on-success="handleAvatorSuccess">
-          <el-button size="mini" type="primary" round>更新图片</el-button>
-        </el-upload>
+          <el-upload :action="uploadUrl(scope.row.id)" :before-upload="beforeAvatorUpload" :on-success="handleAvatorSuccess">
+            <el-button size="mini" type="primary" round>更新图片</el-button>
+          </el-upload>
           <br/>
-        <el-upload :action="uploadSongUrl(scope.row.id)" :before-upload="beforeSongUpload" :on-success="handleSongSuccess">
-          <el-button size="mini" type="primary" round>更新歌曲</el-button>
-        </el-upload>
+          <el-upload :action="uploadSongUrl(scope.row.id)" :before-upload="beforeSongUpload" :on-success="handleSongSuccess">
+            <el-button size="mini" type="primary" round>更新歌曲</el-button>
+          </el-upload>
         </template>
       </el-table-column>
 
@@ -367,9 +367,8 @@ export default {
       } else {
         this.$store.commit('setIsPlay', true)
       }
-    },
+    }
     // 切换页面 歌曲暂停
-
 
   },
   name: 'SingerPage'
