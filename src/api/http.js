@@ -37,9 +37,20 @@ axios.interceptors.response.use(
 
 /**
  * 封装一个GET方法
- */
-export function get (parameters) {
+ * export function get (parameters) {
   let {url, params} = parameters
+  return new Promise((resolve, reject) => {
+    axios.get(url, {params: params})
+      .then(response => {
+        resolve(response.data)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
+}
+ */
+export function get (url, params = {}) {
   return new Promise((resolve, reject) => {
     axios.get(url, {params: params})
       .then(response => {
