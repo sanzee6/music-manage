@@ -58,3 +58,15 @@ export const listSongDetail = (songListId) => get(`listSong/detail?songListId=${
 export const listSongAdd = (params) => post(`listSong/add`, params)
 // 删除歌单的歌曲
 export const delListSong = (songId, songListId) => get(`listSong/delete?songId=${songId}&songListId=${songListId}`)
+
+// ------------------------------------用户相关---------------------------------------
+// 查询用户
+export const getAllConsumer = () => get(`consumer/allConsumer`)
+// 添加用户
+export const setConsumer = (params) => post(`consumer/add`, params)
+
+// 编辑用户
+export const updateConsumer = (params) => post(`consumer/update`, params)
+
+// 删除用户
+export const delConsumer = (id) => get(`consumer/delete?${id}`)
