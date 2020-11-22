@@ -30,6 +30,9 @@ export const songOfSongId = (params) => post(`song/detail`, params)
 // 根据歌曲名查询歌曲对象
 export const songOfSongName = (params) => post(`song/songOfSongName`, params) // songName
 
+// 查询所有歌曲
+export const allSong = () => get(`song/allSong`)
+
 // ------------------------------------歌单相关---------------------------------------
 // 查询歌单
 export const getAllSongList = (params) => post(`songList/allSongList`, params)
