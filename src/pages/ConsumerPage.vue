@@ -34,6 +34,13 @@
       </el-table-column>
       <el-table-column prop="introduction" label="签名"  align="center"></el-table-column>
       <el-table-column prop="location" label="地区" width="120" align="center"></el-table-column>
+      <!--收藏-->
+      <el-table-column label="收藏" width="120" align="center">
+        <template slot-scope="scope">
+        <el-button size="mini" @click="getCollect(scope.row.id)">TA的收藏</el-button>
+        </template>
+      </el-table-column>
+
       <!--修改功能-->
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
@@ -360,6 +367,10 @@ export default {
           console.log(err)
         })
       this.delVisible = false
+    },
+    // 转向该用户收藏
+    getCollect (id) {
+      this.$router.push({path: '/collect', query: {id}})
     }
   },
   name: 'ConsumerPage'

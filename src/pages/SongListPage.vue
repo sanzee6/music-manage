@@ -37,6 +37,12 @@
           <el-button size="mini" @click="songEdit(scope.row.id)">歌曲管理</el-button>
         </template>
       </el-table-column>
+      <!--评论-->
+      <el-table-column label="评论" width="120" align="center">
+        <template slot-scope="scope">
+          <el-button size="mini" @click="getComment(scope.row.id)">评论管理</el-button>
+        </template>
+      </el-table-column>
       <!--修改功能-->
       <el-table-column label="操作" width="150" align="center">
         <template slot-scope="scope">
@@ -266,6 +272,10 @@ export default {
     // 转向歌曲管理页面
     songEdit (id, name) {
       this.$router.push({path: `/ListSong`, query: {id}})
+    },
+    // 转向该歌单的评论列表
+    getComment (id) {
+      this.$router.push({path: '/comment', query: {id}})
     }
   },
   name: 'songListPage'
