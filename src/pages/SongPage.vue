@@ -126,6 +126,7 @@
         <el-form-item prop="lyric" label="歌词" size="mini">
           <el-input v-model="Form.lyric" placeholder="歌词" type="textarea"></el-input>
         </el-form-item>
+
       </el-form>
       <span slot="footer">
       <el-button size="mini" @click="editVisible = false">取消</el-button>
@@ -147,7 +148,7 @@
 import {mixin} from '../mixins'
 import {mapGetters} from 'vuex'
 import '@/assets/js/iconfont.js'
-import {songOfSingerId, updateSong, delSong} from '../api'
+import {songOfSingerId, updateSong, delSong, songOfSongTag} from '../api'
 
 export default {
   mixins: [mixin],
@@ -155,6 +156,7 @@ export default {
     return {
       singerId: '', // 歌手ID
       singerName: '', // 歌手名i
+      songOfSongTag: '',
       centerDialogVisible: false, // 添加弹窗是否显示
       editVisible: false, // 编辑弹窗是否显示
       delVisible: false, // 删除弹框是否显示
@@ -367,9 +369,8 @@ export default {
       } else {
         this.$store.commit('setIsPlay', true)
       }
-    },
+    }
     // 切换页面 歌曲暂停
-
 
   },
   name: 'SingerPage'
